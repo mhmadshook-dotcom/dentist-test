@@ -1,0 +1,9 @@
+.dashboard-footer {
+  display:flex;
+  justify-content:space-between;
+  margin-top:18px;
+  padding-top:12px;
+  border-top:1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}

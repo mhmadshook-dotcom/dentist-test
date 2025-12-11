@@ -1,0 +1,168 @@
+.dashboard {
+  --bg: #ffffff;
+  --panel: #f4fbff;
+  --muted: #6b7a8a;
+  --primary: #2b98ff;
+  --accent: #e6f3ff;
+  --border: #e6eef6;
+  color: #082039;
+  max-width: 1260px;
+  margin: 28px auto;
+  padding: 28px; 
+  background: var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(24,54,86,0.06);
+}
+.count {
+  display: inline-block;
+  min-width: 36px;
+  text-align: center;
+  background: var(--accent);
+  color: var(--primary);
+  padding: 6px 10px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-weight: 600;
+  box-shadow: inset 0 -1px 0 rgba(11,45,78,0.03);
+}
+
+.summary-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+.chart-card {
+  background: white;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 360px;
+  box-shadow: 0 6px 18px rgba(11,45,78,0.04);
+}
+
+.info,
+.error {
+  margin: 12px 0;
+}
+.error {
+  color: #d23a3a;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 18px;
+}
+.search-group { display:flex; gap:8px; flex:1; }
+.search-input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: inherit;
+  min-width: 180px;
+  box-shadow: 0 1px 2px rgba(16,40,60,0.03);
+}
+.search-input::placeholder { color: #9aa7b6; }
+.actions button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  border: 1px solid rgba(43,152,255,0.15);
+  cursor: pointer;
+}
+.actions button:hover { filter: brightness(0.98); }
+
+.table-wrap {
+  overflow-x: none;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 12px;
+}
+
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+  background: white;
+  font-size: 0.95rem;
+}
+
+.patients-table th,
+.patients-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+.patients-table thead th {
+  background: linear-gradient(180deg, #f7fbff, #f1f8ff);
+  font-weight: 700;
+  color: #0b3a66;
+  font-size: 0.98rem;
+  padding: 12px 14px;
+}
+
+.sortable {
+  background: transparent;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  color: inherit;
+}
+.sortable:focus { outline: 2px solid rgba(43,152,255,0.12); border-radius:4px; }
+.sortable::after { content: '\25B2'; font-size:0.6rem; opacity:0.18; transform: translateY(-1px); }
+.sortable.sort-desc::after { content: '\25BC'; opacity:0.6; }
+.sortable.sort-asc::after { content: '\25B2'; opacity:0.9; }
+
+.patients-table tbody tr:hover {
+  background: #f0f8ff;
+}
+
+
+@media (max-width: 900px) {
+  .summary-row { flex-direction: column; gap:12px; }
+  .summary-left { align-items:flex-start; }
+  .patients-table { min-width: 600px; font-size: 0.9rem; }
+  .patients-table th, .patients-table td { padding: 8px 10px; }
+}
+
+@media (min-width: 1500px) {
+  .patients-table { min-width: 1200px; font-size: 1rem; }
+  .patients-table th, .patients-table td { padding: 14px 18px; }
+}
+
+@media (prefers-color-scheme: light) {
+  .dashboard { background: linear-gradient(180deg,var(--panel),var(--bg)); }
+  .patients-table th, .patients-table td { border-color: var(--border); }
+}
+
+.patients-table .empty {
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+}
+
+
+
+
+.status { display:inline-block; padding:6px 10px; border-radius:12px; font-weight:600; font-size:0.85rem; color:#fff; }
+.status-nk { background: #ff8a2b; }       /* نخر - orange */
+.status-ql { background: #e24a4a; }       /* قلع - red */
+.status-none { background: #4bbf73; }     /* لا يوجد - green */
+.status-other { background: #7f8c97; }    /* other - gray */
+
+
+

@@ -1,0 +1,19 @@
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.dashboard-header .brand h2 {
+  margin: 0;
+  font-size: 2.45rem;
+  color: #063254;
+}
+.dashboard-header .subtitle {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.dashboard-header .total {
+  font-weight: 700;
+  color: #07406a;
+}
